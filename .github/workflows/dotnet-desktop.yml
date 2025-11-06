@@ -62,7 +62,7 @@ jobs:
           dotnet-version: ${{ env.DOTNET_SDK_VERSION }}
 
       - run: apt-get update
-      - run: apt-get install -y build-essential clang binutils-arm-linux-gnueabihf
+      - run: apt-get install -y build-essential clang binutils-arm-linux-gnueabi
       - run: dotnet publish src/N_m3u8DL-RE -r linux-musl-arm -c Release -o artifact -p:CppCompilerAndLinker=clang -p:SysRoot=/crossrootfs/arm -p:InvariantGlobalization=true
 
       - name: Package [linux-musl-arm]
